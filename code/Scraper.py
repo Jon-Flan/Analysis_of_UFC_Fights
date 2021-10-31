@@ -221,6 +221,8 @@ def get_event_details():
     event_detail_URLs = get_event_detail_URLs()
     event_names_df = get_event_names()
     
+
+    
     # Scrape the URLs and create DataFrames for each table adding the event name from df_events
     for url in tqdm(range(len(event_detail_URLs)), desc="Scraping URL's: "):
         data = pd.read_html(event_detail_URLs[url])
@@ -234,6 +236,8 @@ def get_event_details():
     
     # Reset the index
     event_details_df.reset_index(drop=True, inplace=True)
+        
+
     
     return event_details_df
 
@@ -274,37 +278,26 @@ def get_further_fighter_details():
     # scrape for the details urls on the site
     fighter_details_urls = get_fighter_more_details_URLs()
     
-    # prev urls visited and scraped
-    url_list = ('../url_lists/fighter_urls.csv')
-    prev_urls = pd.read_csv(url_list)
-    prev = list(prev_urls['URLs'])
+   
+
+    for url in tqdm(range(len(fighter_details_urls)), desc='Getting Fighter Details: '):
+        # Get the url and convert to lxml
+        page = requests.get(fighter_details_urls[url])
+        soup = BeautifulSoup(page.text, 'lxml')
+        soup
     
-    # set urls to the differnce between whats been scraped and whats new
-    urls_new = list(set(fighter_details_urls).difference(prev))
-    
-    if len(urls_new) < 1:
-        print('\nNo new Fighters to get information on.')
-    else:
-        for url in tqdm(range(len(urls_new)), desc='Getting Fighter Details: '):
-            # Get the url and convert to lxml
-            page = requests.get(urls_new[url])
-            soup = BeautifulSoup(page.text, 'lxml')
-            soup
-        
-            # Get the title name present on the webpage
-            name__ = soup.find('span', {'class': 'b-content__title-highlight'})
-            name = name__.text.strip()
-            # Get the details list items
-            details__ = soup.find('ul', {'class': 'b-list__box-list'})
-            details = [a.text.replace('\n','').replace('--', '').replace(' ','') for a in details__.find_all('li')]
-            # append the name to the begining of the details list
-            details.insert(0, name)
-            # append each list as a row to the DataFrame
-            fighter_details_df.loc[len(fighter_details_df)] = details
-            time.sleep(1)
-            
-        urls_scraped = pd.DataFrame(urls_new, columns=['URLs'])
-        urls_scraped.to_csv('../url_lists/fighter_urls.csv', mode='a', index=False, header=False)
+        # Get the title name present on the webpage
+        name__ = soup.find('span', {'class': 'b-content__title-highlight'})
+        name = name__.text.strip()
+        # Get the details list items
+        details__ = soup.find('ul', {'class': 'b-list__box-list'})
+        details = [a.text.replace('\n','').replace('--', '').replace(' ','') for a in details__.find_all('li')]
+        # append the name to the begining of the details list
+        details.insert(0, name)
+        # append each list as a row to the DataFrame
+        fighter_details_df.loc[len(fighter_details_df)] = details
+        time.sleep(1)
+
     
     return fighter_details_df      
 
@@ -351,65 +344,53 @@ def get_event_fight_details():
     # Main DataFrame
     fight_details_df = pd.DataFrame()
     
-    # prev urls visited and scraped
-    url_list = ('../url_lists/fight_details_urls.csv')
-    prev_urls = pd.read_csv(url_list)
-    prev = list(prev_urls['URLs'])
-    
-    # set urls to the differnce between whats been scraped and whats new
-    urls_new = list(set(fight_detail_URLs).difference(prev))
-    
-    if len(urls_new) < 1:
-        print('\nNo new Fights to get information on.')
-    else:
-        # Scrape for the fight details from each URL
-        for url in tqdm(range(len(urls_new)), desc="Getting Fight Details: "):
-            try:
-                # Get the url and convert to lxml
-                page = requests.get(urls_new[url])
-                soup = BeautifulSoup(page.text, 'lxml')
-                soup
-            
-                # Get the title name present on the webpage
-                event__ = soup.find('h2', {'class': 'b-content__title'})
-                event = event__.text.strip()
-                
-                # Get the fight details tables, joining relevant data together
-                data = pd.read_html(urls_new[url])
-                
-                # Add the details from the third table to the first table
-                data[0][['Head',
-                        'Body',
-                        'Leg',
-                        'Distance',
-                        'Clinch',
-                        'Ground']] = data[2][['Head',
-                                              'Body',
-                                              'Leg',
-                                              'Distance',
-                                              'Clinch',
-                                              'Ground']]
-                
-                # Add the event name to the dataframe
-                data[0]['Event'] = event
-                # append to list of dataframes
-                fight_details_dfs.append(data[0])
-                time.sleep(1)
-            except ValueError:
-                pass
-                                                                                            
-            
-         # Concatenate all collected DataFrames
-        for i in tqdm(range(len(fight_details_dfs)), desc="Creating DataFrame: "):
-            fight_details_df = fight_details_df.append(fight_details_dfs[i])
-            
+
+    # Scrape for the fight details from each URL
+    for url in tqdm(range(len(fight_detail_URLs)), desc="Getting Fight Details: "):
+        try:
+            # Get the url and convert to lxml
+            page = requests.get(fight_detail_URLs[url])
+            soup = BeautifulSoup(page.text, 'lxml')
+            soup
         
-        # Reset the index
-        fight_details_df.reset_index(drop=True, inplace = True)
+            # Get the title name present on the webpage
+            event__ = soup.find('h2', {'class': 'b-content__title'})
+            event = event__.text.strip()
+            
+            # Get the fight details tables, joining relevant data together
+            data = pd.read_html(fight_detail_URLs[url])
+            
+            # Add the details from the third table to the first table
+            data[0][['Head',
+                    'Body',
+                    'Leg',
+                    'Distance',
+                    'Clinch',
+                    'Ground']] = data[2][['Head',
+                                          'Body',
+                                          'Leg',
+                                          'Distance',
+                                          'Clinch',
+                                          'Ground']]
+            
+            # Add the event name to the dataframe
+            data[0]['Event'] = event
+            # append to list of dataframes
+            fight_details_dfs.append(data[0])
+            time.sleep(1)
+        except ValueError:
+            pass
+                                                                                        
         
-        # Append new urls to the url list 
-        urls_scraped = pd.DataFrame(urls_new, columns=['URLs'])
-        urls_scraped.to_csv('../url_lists/fight_details_urls.csv', mode='a', index=False, header=False)
+     # Concatenate all collected DataFrames
+    for i in tqdm(range(len(fight_details_dfs)), desc="Creating DataFrame: "):
+        fight_details_df = fight_details_df.append(fight_details_dfs[i])
+        
+    
+    # Reset the index
+    fight_details_df.reset_index(drop=True, inplace = True)
+        
+
         
     return fight_details_df
 

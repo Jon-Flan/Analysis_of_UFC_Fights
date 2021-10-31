@@ -8,7 +8,7 @@ Created on Sat Oct 16 09:32:54 2021
 import pandas as pd
 import Scraper as scrp
 import numpy as np
-
+import sys
 
 #------------------------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------------------------
@@ -45,6 +45,35 @@ import numpy as np
     For my personal computer hardware / internet bandwidth combination it took:
     4hrs to scrape and retrieve all datasets.
 """
+
+#------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------
+
+# Main function to update all data or either fighter or fight data
+def main():
+    if len(sys.argv) != 2:
+        sys.exit("Usgae: python Get_Data.py [option], option 1: [All], option 2: [Fighters], option 3: [Events]")
+    option = sys.argv[1]
+    
+    if option == 'All':
+        print("\nGathering Fighter information:\n")
+        fighter_data()
+        print("\nFighter Data completed!\n")
+        print('\nGathering Event & Fight Data:\n')
+        event_details_data()
+        fight_details_data()
+        print('\nEvent & Fight Data completed!\n')
+    elif option == 'Fighters':
+        print("\nGathering Fighter information:\n")
+        fighter_data()
+        print("\nFighter Data completed!")
+    elif option == 'Events':
+        print('\nGathering Event & Fight Data:\n')
+        event_details_data()
+        fight_details_data()
+        print('\nEvent & Fight Data completed!\n')
+    else:
+        sys.exit('Incorrect Options applied. Usgae: python Get_Data.py [option], option 1: [All], option 2: [Fighters], option 3: [Events]')
 
 #------------------------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------------------------
@@ -135,23 +164,94 @@ def get_fighters():
 #------------------------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------------------------
 
-# Get the figthers information
-fighters_df = get_fighters()
+def fighter_data():
+    # Get the figthers information
+    fighters_df = get_fighters()
+    
+    # If no new fighters to get info on print msg and do nothing
+    if fighters_df.empty:
+        print('Done checking Fighters.\n')
+    # Otherwise print the info and append to existing csv
+    else:
+        fighters_df.info()
+        fighters_df.dtypes
+        print(fighters_df)
+        fighters_df.to_csv('../data/fighters.csv', mode='a', index=False, header=False)
 
-# If no new fighters to get info on print msg and do nothing
-if fighters_df.empty:
-    print('Done checking Fighters.\n')
-# Otherwise print the info and append to existing csv
-else:
-    fighters_df.info()
-    fighters_df.dtypes
-    print(fighters_df)
-    fighters_df.to_csv('../data/fighters.csv', mode='a', index=False, header=False)
-
+#------------------------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------------------------
 
 # Get the events and their details
-#event_details_df = scrp.get_event_details()
+def get_events():
+    
+    # Scrape for events
+    event_details_df = scrp.get_event_details()
+    
+    if len(event_details_df) < 1:
+        event_details_df = pd.DataFrame()
+        
+        return event_details_df
+    else:
+        #--------------------------------------------------------------------------------------------
+        
+        # Get the names of each fighter in the fight
+        fighters = fighter_names(event_details_df.copy())
+        event_details_df['Fighter 1'] = fighters[0]
+        event_details_df['Fighter 2'] = fighters[1]
+        
+        #--------------------------------------------------------------------------------------------
+        
+        # Convert the control times in seconds for better calculations
+        def round_times(frame, x):
+            frame[[x+'_min', x+'_sec']] = frame[x].str.split(':', expand=True)
+            frame[x+'_min'] = frame[x+'_min'].apply(pd.to_numeric, errors='coerce')
+            frame[x+'_min'] = frame[x+'_min']*60
+            frame[x+'_sec'] = frame[x+'_sec'].apply(pd.to_numeric, errors='coerce')
+            frame[x] = frame[x+'_min'] + frame[x+'_sec']
+            
+            return frame[x]
+    
+        # Get the converted control times
+        round_times = round_times(event_details_df.copy(), 'Time')
+        event_details_df['Time'] = round_times
+        
+        #--------------------------------------------------------------------------------------------
+        
+        # split out the event name from the columns
+        event_date= split(event_details_df.copy(), 'Event')
+        event_details_df['Event'] = event_date[0]
+        event_details_df['Date']= event_date[1]
+        
+        #--------------------------------------------------------------------------------------------
+        
+        # Reset the columns to what is needed
+        event_details_df = event_details_df.reindex(columns=['W/L', 
+                                                             'Fighter 1', 
+                                                             'Fighter 2',
+                                                             'Weight class', 
+                                                             'Method',
+                                                             'Round', 
+                                                             'Time', 
+                                                             'Event',
+                                                             'Date'])
+        
+        return event_details_df
+ 
+    
+#------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------
+ 
+def event_details_data():  
+    event_details_df = get_events()
+    # If no new fights to get info on print msg and do nothing
+    if event_details_df.empty:
+        print('Done checking Events.\n')
+    # Otherwise print the info and append to existing csv
+    else:
+        event_details_df.info()
+        event_details_df.dtypes
+        print(event_details_df)
+        event_details_df.to_csv('../data/events.csv', mode='a', index=False, header=True)
 
 #------------------------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------------------------
@@ -167,16 +267,7 @@ def get_fights():
         
         return fight_details_df
     
-    else:
-
-        #--------------------------------------------------------------------------------------------------------------------
-       
-        # Split out columns into 2 by double space delimiter, to represent one for each fighter
-        def split(frame, x):
-            frame[[x+' F_1', x+' F_2']] = frame[x].str.split('  ', expand=True)
-        
-            return frame[x+' F_1'], frame[x+' F_2']
-        
+    else:        
         #--------------------------------------------------------------------------------------------
                
         # Get the knockdowns for each fighter
@@ -365,46 +456,7 @@ def get_fights():
         fight_details_df['Ground landed F_2'] = strikes_Ground[2]
         fight_details_df['Ground thrown F_2'] = strikes_Ground[3]
             
-            
         #-------------------------------------------------------------------------------------------------
-        
-        # Create dataframe of fighter names 
-        def get_names():
-            file2 = ('../data/fighters.csv')
-            fighters_ = pd.read_csv(file2)
-            fighters_.fillna('', inplace=True)
-            fighter_name_ = list(fighters_['First Name'] + ' '+ fighters_['Last Name'])
-            fighter_name_ =[x.strip(' ') for x in fighter_name_]
-            fighter_name = pd.DataFrame({'Names':fighter_name_})
-            return fighter_name
-        
-       # Get the fighter names
-        names = get_names()
-        
-       #-------------------------------------------------------------------------------------------------
-       
-       # Using the names dataframe created, split out the fighters names from the Fighter Column
-        def fighter_names(frame):
-             frame['Fighter 1'] = ''
-        
-             for x in range(len(names)):
-                frame['Fighter 1'] = np.where(frame['Fighter'].str.startswith(names.loc[x,'Names']), 
-                                              names.loc[x,'Names'], 
-                                              frame['Fighter 1'])
-            
-             frame['F1 name len'] = frame['Fighter 1'].str.len()
-             frame['name len'] = frame['Fighter'].str.len()
-             frame['F2 name len'] = frame['name len'] - frame['Fighter 1'].str.len()
-             frame['Fighter 2'] = ''
-            
-             for x in range(len(frame)):
-                 y = frame.iloc[x]['F2 name len']
-                
-                 frame.loc[x,'Fighter 2'] = frame.iloc[x]['Fighter'][-y:]
-                
-             frame['Fighter 2'] = frame['Fighter 2'].str.strip()
-    
-             return frame['Fighter 1'],frame['Fighter 2']
         
         # Get the names of each fighter in the fight
         fighters = fighter_names(fight_details_df.copy())
@@ -442,17 +494,82 @@ def get_fights():
 #-------------------------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------------------------
 
+def fight_details_data():
+    # Get the fight information, print column info and export CSV
+    fight_details_df = get_fights()
+    
+    # If no new fights to get info on print msg and do nothing
+    if fight_details_df.empty:
+        print('Done checking Fights\n')
+    # Otherwise print the info and append to existing csv
+    else:
+        fight_details_df.info()
+        fight_details_df.dtypes
+        print(fight_details_df)
+        fight_details_df.to_csv('../data/fights.csv', mode='a', index=False, header=True)
 
-# Get the fight information, print column info and export CSV
-fight_details_df = get_fights()
+#-------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------
 
-# If no new fights to get info on print msg and do nothing
-if fight_details_df.empty:
-    print('Done checking Fights')
-# Otherwise print the info and append to existing csv
-else:
-    fight_details_df.info()
-    fight_details_df.dtypes
-    print(fight_details_df)
-    fight_details_df.to_csv('../data/fights.csv', mode='a', index=False, header=False)
+# Create dataframe of fighter names 
+def get_names():
+     file2 = ('../data/fighters.csv')
+     fighters_ = pd.read_csv(file2)
+     fighters_.fillna('', inplace=True)
+     fighter_name_ = list(fighters_['First Name'] + ' '+ fighters_['Last Name'])
+     fighter_name_ =[x.strip(' ') for x in fighter_name_]
+     fighter_name = pd.DataFrame({'Names':fighter_name_})
+     return fighter_name
+  
+#-------------------------------------------------------------------------------------------------
+
+# Using the names dataframe created, split out the fighters names from the Fighter Column
+def fighter_names(frame):
+    # Get the fighter names
+    names = get_names()
+    frame['Fighter 1'] = ''
+ 
+    for x in range(len(names)):
+         frame['Fighter 1'] = np.where(frame['Fighter'].str.startswith(names.loc[x,'Names']), 
+                                       names.loc[x,'Names'], 
+                                       frame['Fighter 1'])
+     
+    frame['F1 name len'] = frame['Fighter 1'].str.len()
+    frame['name len'] = frame['Fighter'].str.len()
+    frame['F2 name len'] = frame['name len'] - frame['Fighter 1'].str.len()
+    frame['Fighter 2'] = ''
+     
+    for x in range(len(frame)):
+        y = frame.iloc[x]['F2 name len']
+       
+        frame.loc[x,'Fighter 2'] = frame.iloc[x]['Fighter'][-y:]
+       
+    frame['Fighter 2'] = frame['Fighter 2'].str.strip()
+ 
+    return frame['Fighter 1'],frame['Fighter 2']
+
+#--------------------------------------------------------------------------------------------------------------------
+   
+# Split out columns into 2 by double space delimiter, to represent one for each fighter
+def split(frame, x):
+    frame[[x+' F_1', x+' F_2']] = frame[x].str.split('  ', expand=True)
+
+    return frame[x+' F_1'], frame[x+' F_2']
+
+#-------------------------------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------
+
+# calling main function.
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
+
+
+
+
 
