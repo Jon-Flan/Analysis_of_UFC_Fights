@@ -10,23 +10,42 @@ In total 10,658 unique url's where processed for the initial Datasets. Using thi
 to collect the data can take several hours to complete depending on computer hardware and internet bandwidth.<br>
     
 For my personal computer hardware / internet bandwidth combination it took:<br>
-**_Approx 4hrs_** to retrieve all data.<br>
+**_Approx 5hrs_** to retrieve all data.<br>
 <br>
+Tech information on machine used to collect data is:<br>
+
 
 ### Updating Data
 If the program has been ran already, then only new information will be collected and appended to the <br>
 csv files. This will save time in updating data and stop the need to run the program entirely everytime.<br>
 <br>
 To do this, a list of URL's visited is kept and checked against before proceeding with the scraping. <br>
-Caveats to this are a) a flat file of all URL's is to be maintained and when updating data the scraper must <br>
-scrape the initial URL's to see if anything has changed.<br>
+Caveats to this are:<br> 
+1. A flat file of all URL's is to be maintained 
+2. When updating data the scraper must scrape the initial URL's to see if anything has changed.<br>
 
 ### Collecting the Data
 To collect the Data, Get_Data.py can be ran which will update the data contained in the csv files.<br>
+Get_Data.py is to be ran directly from the terminal/Command Line. <br>
+Usage is:<br>
+```
+python Get_Data.py [options]
+```
+**python command may differ depending on your installation of python**
+<br>
+<br>
+Options are:<br>
+- option 1: All
+- option 2: Fighters
+- option 3: Events
+<br>
 Data is updated on the website after each new fight event. Be careful not to run the program **DURING** a live a event.<br>
 Your data will be skewed. <br>
 <br>
-**Running the Get_Data.py script will initiate these methods:**<br>
+
+**Running the Get_Data.py script will initiate these methods:**
+
+<br>
 
 #### 1. Getting the fighter info & normalizing
 ```python
@@ -60,7 +79,93 @@ if fighters_df == None:
 else:
     fighters_df.to_csv('../data/fighters.csv', mode='a', index=False, header=False)
 ```
-
+#### 2. Getting the Events & normalizing
+```Python
+# Get the events and their details
+def get_events():
+    
+    # Scrape for events
+    event_details_df = scrp.get_event_details()
+    
+    if len(event_details_df) < 1:
+        event_details_df = pd.DataFrame()
+        
+        return event_details_df
+    else:
+        #--------------------------------------------------------------------------------------------
+        
+        # Get the names of each fighter in the fight
+        fighters = fighter_names(event_details_df.copy())
+        event_details_df['Fighter 1'] = fighters[0]
+        event_details_df['Fighter 2'] = fighters[1]
+        
+        #--------------------------------------------------------------------------------------------
+        
+        # Convert the control times in seconds for better calculations
+        def round_times(frame, x):
+            frame[[x+'_min', x+'_sec']] = frame[x].str.split(':', expand=True)
+            frame[x+'_min'] = frame[x+'_min'].apply(pd.to_numeric, errors='coerce')
+            frame[x+'_min'] = frame[x+'_min']*60
+            frame[x+'_sec'] = frame[x+'_sec'].apply(pd.to_numeric, errors='coerce')
+            frame[x] = frame[x+'_min'] + frame[x+'_sec']
+            
+            return frame[x]
+            
+        # More code below for naormalization .........
+        
+        
+        # Reset the columns to what is needed
+        event_details_df = event_details_df.reindex(columns=['W/L', 
+                                                             'Fighter 1', 
+                                                             'Fighter 2',
+                                                             'Weight class', 
+                                                             'Method',
+                                                             'Round', 
+                                                             'Time', 
+                                                             'Event',
+                                                             'Date'])
+        
+        return event_details_df
+```
+#### 3. Getting the Fight information from each event & normalizing
+```Python
+# Get the details of each fight at each event
+def get_fights():
+    
+    # Scrape for the fight details
+    fight_details_df = scrp.get_event_fight_details()
+    
+    if len(fight_details_df) < 1:
+        fight_details_df = pd.DataFrame()
+        
+        return fight_details_df
+    
+    else:        
+        #--------------------------------------------------------------------------------------------
+               
+        # Get the knockdowns for each fighter
+        knock_downs_split = split(fight_details_df.copy(), 'KD')
+        fight_details_df['KD F_1'] = knock_downs_split[0].apply(pd.to_numeric, errors='coerce')
+        fight_details_df['KD F_2'] = knock_downs_split[1].apply(pd.to_numeric, errors='coerce')
+        
+        # Get the submission attempts by each fighter
+        submissions_split = split(fight_details_df.copy(), 'Sub. att')
+        fight_details_df['Sub. att F_1'] = submissions_split[0].apply(pd.to_numeric, errors='coerce')
+        fight_details_df['Sub. att F_2'] = submissions_split[1].apply(pd.to_numeric, errors='coerce')
+        
+        # Get the reversals for each fighter
+        reversals_split = split(fight_details_df.copy(), 'Rev.')
+        fight_details_df['Rev. F_1'] = reversals_split[0].apply(pd.to_numeric, errors='coerce')
+        fight_details_df['Rev. F_2'] = reversals_split[1].apply(pd.to_numeric, errors='coerce')
+        
+        # More Normalization code here ...................................
+        
+        # Final column cleaning and export completed dataframe
+        frame = clean_dataframe(fight_details_df)    
+        fight_details_df = frame
+    
+        return fight_details_df
+```
 
 # Data Info
 There are 3 Datasets contained in the Data folder. <br>
