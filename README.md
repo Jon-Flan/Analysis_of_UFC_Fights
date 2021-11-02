@@ -168,7 +168,7 @@ def get_fights():
 ```
 
 # Data Info
-There are 3 Datasets contained in the Data folder. <br>
+There are 3 initial Datasets contained in the Data folder. <br>
 - Fighter Information (fighters.csv)
 - Events Information (events.csv)
 - Fights Information (fight_data.csv)
@@ -176,7 +176,12 @@ There are 3 Datasets contained in the Data folder. <br>
 ### The Fighter information
 This is the data information in the fighters.csv file <br>
 *_(After normalization and export but before cleaning and dealing with null/missing values)_*<br><br>
+![Fighter CSV Info](https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/fighter_dtypes_info%20copy.png)
 
+### The Event Informaton
+This is the data information in the events.csv file<br>
+*_(After normalization and export but before cleaning and dealing with null/missing values)_*<br><br>
+![Event CSV Info](https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/event_dtypes_info.png)
 
 # Tools Used
 All tools and languages used, including packages from within each language <br>
