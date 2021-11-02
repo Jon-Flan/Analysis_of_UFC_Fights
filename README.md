@@ -196,7 +196,7 @@ All tools and languages used, including packages from within each language <br>
 #### Prerequisites are:
 - Python3 is instaled
 - R and R Studio are installed
-- Anaconda3 is installed
+- Anaconda3 is installed (Optional, any IDE capable of editing python is useable)
 
 ##### Installing Anaconda Instructions: <br>
 **For Windows:** https://docs.anaconda.com/anaconda/install/windows/ <br>
