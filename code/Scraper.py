@@ -278,7 +278,6 @@ def get_further_fighter_details():
     # scrape for the details urls on the site
     fighter_details_urls = get_fighter_more_details_URLs()
     
-   
 
     for url in tqdm(range(len(fighter_details_urls)), desc='Getting Fighter Details: '):
         # Get the url and convert to lxml

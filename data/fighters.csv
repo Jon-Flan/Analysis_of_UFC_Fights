@@ -97,7 +97,7 @@ Chris,Amarante,,,185.0,,,2,0,0,
 Jimmy,Ambriz,The Titan,74.0,315.0,,Southpaw,17,21,1,1970-01-26
 JJ,Ambrose,,70.0,170.0,,Orthodox,28,7,0,
 Alen,Amedovski,,70.0,185.0,74.0,Orthodox,8,2,0,1988-04-06
-Makwan,Amirkhani,Mr. Finland,70.0,145.0,72.0,Southpaw,16,6,0,1988-11-08
+Makwan,Amirkhani,Mr. Finland,70.0,145.0,72.0,Southpaw,16,7,0,1988-11-08
 Bertrand,Amoussou,,68.0,190.0,,Orthodox,1,1,0,
 Karl,Amoussou,The Psycho,71.0,185.0,,Orthodox,27,7,2,1985-11-21
 Eryk,Anders,Ya Boi,73.0,185.0,75.0,Southpaw,14,5,0,1987-04-21
@@ -117,7 +117,7 @@ Julius,Anglickas,,75.0,205.0,,Orthodox,5,1,0,1991-07-23
 Collin,Anglin,,69.0,145.0,71.0,Orthodox,8,2,0,1993-02-20
 Chad,Anheliger,,66.0,135.0,64.0,Orthodox,11,5,0,1986-12-01
 Yoji,Anjo,Mr. 200%,71.0,205.0,,Orthodox,0,5,1,1967-03-28
-Magomed,Ankalaev,,75.0,205.0,75.0,Orthodox,15,1,0,1992-06-02
+Magomed,Ankalaev,,75.0,205.0,75.0,Orthodox,16,1,0,1992-06-02
 Gadzhimurad,Antigulov,,71.0,205.0,70.0,Orthodox,20,8,0,1987-02-09
 Adam,Antolin,Captain Chaos,65.0,125.0,63.0,Orthodox,12,3,0,1982-02-28
 Angelo,Antonio,,,205.0,,Orthodox,1,4,0,
@@ -289,7 +289,7 @@ Arjan,Bhullar,,73.0,245.0,75.0,Orthodox,9,1,0,1986-05-13
 KB,Bhullar,The Bengal,76.0,185.0,78.0,Switch,8,2,0,1991-10-12
 Bibulatov,Magomed,Chaborz,65.0,125.0,65.0,Orthodox,14,2,0,1988-08-22
 David,Bielkheden,,70.0,155.0,71.0,Orthodox,24,12,0,1979-06-06
-Jonas,Bilharinho,Shiva,71.0,145.0,,,8,1,1,1990-05-22
+Jonas,Bilharinho,,61.0,145.0,,Switch,8,1,1,1990-05-22
 Jeremiah,Billington,,69.0,205.0,,Orthodox,11,2,0,1977-11-14
 Scott,Bills,,70.0,170.0,,,7,9,1,
 Anthony,Birchak,El Toro,68.0,135.0,69.0,Orthodox,16,8,0,1986-05-16
@@ -298,7 +298,7 @@ Michael,Bisping,The Count,73.0,185.0,75.0,Orthodox,30,9,0,1979-02-28
 Amaury,Bitetti,,69.0,185.0,,Orthodox,5,2,0,
 Caio,Bittencourt,Leao,72.0,185.0,75.0,Orthodox,14,7,0,1991-05-22
 Simon,Biyong,,,205.0,,,7,1,0,1991-04-05
-Jan,Blachowicz,,74.0,205.0,78.0,Orthodox,28,8,0,1983-02-24
+Jan,Blachowicz,,74.0,205.0,78.0,Orthodox,28,9,0,1983-02-24
 Jason,Black,The Black Legion,68.0,155.0,,Orthodox,23,4,1,1972-07-15
 Brad,Blackburn,Bad Brad,70.0,170.0,73.0,Orthodox,18,13,1,1977-05-25
 Jason,Blackford,,,,,,3,3,0,
@@ -426,7 +426,7 @@ Shawn,Bunch,Bunch the Great,65.0,135.0,,,7,3,0,1983-03-19
 Wuliji,Buren,Beast Master,69.0,135.0,69.0,Orthodox,9,6,0,1989-03-01
 Shane,Burgos,Hurricane,71.0,145.0,75.0,Orthodox,13,3,0,1991-03-19
 Joshua,Burkman,The People's Warrior,70.0,170.0,72.0,Orthodox,28,16,0,1980-04-10
-Justin,Burlinson,,73.0,170.0,,,6,0,0,1997-05-19
+Justin,Burlinson,,73.0,170.0,74.0,Switch,6,0,0,1997-05-19
 Mads,Burnell,,68.0,145.0,69.0,Orthodox,9,3,0,1994-03-06
 Mikey,Burnett,The Eastside Assassin,66.0,170.0,,Orthodox,5,2,0,1974-04-12
 Kevin,Burns,The Fire,70.0,170.0,74.0,Orthodox,12,7,0,1980-03-03
@@ -563,7 +563,7 @@ Mark,Cherico,The Pride of Bloomfield,67.0,145.0,69.0,Orthodox,11,1,0,1986-05-12
 Macy,Chiasson,,71.0,135.0,72.0,Orthodox,8,1,0,1991-07-27
 Michael,Chiesa,Maverick,73.0,170.0,75.0,Southpaw,18,5,0,1987-12-07
 Giga,Chikadze,Ninja,72.0,145.0,74.0,Orthodox,14,2,0,1988-08-25
-Khamzat,Chimaev,Borz,74.0,170.0,75.0,Orthodox,9,0,0,1994-05-01
+Khamzat,Chimaev,Borz,74.0,170.0,75.0,Orthodox,10,0,0,1994-05-01
 Sako,Chivitchian,,71.0,155.0,,,8,1,0,1984-03-11
 Mu Bae,Choi,,74.0,230.0,,Orthodox,12,6,0,1970-06-27
 Hong Man,Choi,Techno Goliath,86.0,330.0,,Orthodox,4,5,0,1980-10-30
@@ -869,7 +869,7 @@ Chris,Duncan,The Problem,70.0,155.0,71.0,Orthodox,7,1,0,1993-05-10
 Evan,Dunham,,70.0,155.0,70.0,Southpaw,18,9,1,1981-12-18
 Alex,Dunworth,,68.0,155.0,,,2,2,0,
 Tom,Duquesnoy,Fire Kid,67.0,135.0,68.0,Orthodox,16,2,0,1993-06-21
-Albert,Duraev,,71.0,185.0,75.0,Orthodox,14,3,0,1989-01-05
+Albert,Duraev,,71.0,185.0,75.0,Orthodox,15,3,0,1989-01-05
 Reuben,Duran,,67.0,135.0,71.0,Orthodox,11,7,1,1983-07-02
 Cody,Durden,,67.0,125.0,67.0,Southpaw,11,3,1,1991-03-29
 Luiz,Dutra,Besouro,71.0,170.0,,Orthodox,13,6,1,1982-05-06
@@ -991,7 +991,7 @@ Bibiano,Fernandes,,67.0,139.0,,Orthodox,20,3,0,1980-03-30
 Alexandre,Ferreira,Cacareco,67.0,205.0,,Orthodox,18,6,0,1979-04-25
 Cezar,Ferreira,Mutante,73.0,185.0,78.0,Southpaw,13,8,0,1985-02-15
 Diego,Ferreira,,69.0,155.0,74.0,Orthodox,17,4,0,1985-01-18
-Erisson,Ferreira da Silva,Gato,67.0,125.0,,,10,1,0,1991-05-03
+Erisson,Ferreira da Silva,Gato,66.0,125.0,70.0,Orthodox,10,1,0,1991-05-03
 Scott,Ferrozzo,The Pitbull,71.0,323.0,,Orthodox,4,2,0,1965-04-26
 Timo,Feucht,,75.0,205.0,79.0,Orthodox,8,1,0,1996-01-18
 Drew,Fickett,The Master,70.0,155.0,70.0,Orthodox,42,21,0,1979-12-14
@@ -1102,7 +1102,7 @@ Lucas,Gamaza,,,170.0,,,8,4,0,
 Joey,Gambino,The Raging Warrior,67.0,145.0,,Orthodox,9,2,0,1988-10-26
 Manvel,Gamburyan,The Anvil,65.0,135.0,67.0,Orthodox,15,10,0,1981-05-08
 Mateusz,Gamrot,Gamer,70.0,155.0,70.0,Southpaw,19,1,0,1990-12-11
-Shamil,Gamzatov,,74.0,205.0,76.0,Orthodox,14,0,0,1990-08-09
+Shamil,Gamzatov,,74.0,205.0,76.0,Orthodox,14,1,0,1990-08-09
 Ariel,Gandulla,,71.0,205.0,,Orthodox,7,9,0,1968-05-07
 Ciryl,Gane,Bon Gamin,76.0,245.0,81.0,Orthodox,10,0,0,1990-04-12
 Sean,Gannon,The Cannon,75.0,265.0,,Southpaw,2,1,0,
@@ -1443,7 +1443,7 @@ Chris,Honeycutt,The Cutt,70.0,170.0,73.0,,9,1,0,1988-07-25
 Satoshi,Honma,,73.0,205.0,,Orthodox,4,6,3,1968-05-19
 David,Hood,,72.0,200.0,,,1,3,0,
 Lorenzo,Hood,Dream Killer,75.0,265.0,80.0,Southpaw,14,5,0,1989-03-02
-Dan,Hooker,The Hangman,72.0,155.0,75.0,Switch,21,10,0,1990-02-13
+Dan,Hooker,The Hangman,72.0,155.0,75.0,Switch,21,11,0,1990-02-13
 Chase,Hooper,The Dream,73.0,145.0,74.0,Southpaw,10,2,1,1999-09-13
 Darrell,Horcher,The Saint,70.0,155.0,70.0,Southpaw,13,4,0,1987-07-28
 Moti,Horenstein,,76.0,230.0,,Orthodox,1,6,0,
@@ -1463,7 +1463,7 @@ Brian,Houston,B-Hue,74.0,185.0,,Orthodox,4,6,0,1981-04-26
 Harold,Howard,,74.0,240.0,,Orthodox,1,3,0,
 John,Howard,Doomsday,67.0,170.0,72.0,Orthodox,24,13,0,1983-03-01
 Shane,Howell,,68.0,125.0,,Orthodox,13,10,0,1983-11-28
-Hu,Yaozong,Totoro,75.0,185.0,72.0,Orthodox,3,2,0,1995-04-07
+Hu,Yaozong,Totoro,75.0,185.0,72.0,Orthodox,3,3,0,1995-04-07
 Carlos,Huachin,Perro Malo,64.0,135.0,67.0,Southpaw,10,5,1,1996-06-04
 Brady,Huang,The Kung Fu Warrior,69.0,135.0,69.0,Orthodox,11,2,0,1992-12-16
 Austin,Hubbard,Thud,70.0,155.0,71.0,Orthodox,13,6,0,1991-12-22
@@ -1540,7 +1540,7 @@ Eric,Jacob,,,155.0,,,1,9,0,
 Dustin,Jacoby,The Hanyak,75.0,205.0,76.0,Orthodox,15,5,1,1988-04-04
 Justin,James,,70.0,155.0,,Orthodox,13,7,0,1976-11-08
 Nate,James,,72.0,185.0,,,14,8,1,1978-05-29
-Virna,Jandiroba,Carcara,63.0,115.0,64.0,Orthodox,17,2,0,1988-05-30
+Virna,Jandiroba,Carcara,63.0,115.0,64.0,Orthodox,17,3,0,1988-05-30
 Ryan,Janes,,75.0,185.0,76.0,Orthodox,10,3,0,1981-08-22
 Josh,Janousek,,71.0,185.0,,Orthodox,8,1,0,1980-09-25
 Dave,Jansen,,69.0,155.0,73.0,Orthodox,20,4,0,1979-08-21
@@ -1740,7 +1740,7 @@ Yuki,Kondo,,71.0,183.0,,Southpaw,60,33,9,1975-07-17
 Syuri,Kondo,,64.0,115.0,66.0,Orthodox,6,3,0,1989-02-08
 Cheick,Kongo,,76.0,240.0,82.0,Orthodox,27,10,2,1975-05-17
 Andrei,Kopylov,,74.0,265.0,,Orthodox,6,11,0,1965-07-16
-Roman,Kopylov,,72.0,185.0,75.0,Southpaw,8,1,0,1991-05-04
+Roman,Kopylov,,72.0,185.0,75.0,Southpaw,8,2,0,1991-05-04
 Bruno,Korea,,66.0,135.0,65.0,,7,3,0,1991-06-28
 Andrey,Koreshkov,Spartan,72.0,170.0,,,19,2,0,1990-08-23
 Josh,Koscheck,,70.0,170.0,73.0,Orthodox,17,11,0,1977-11-30
@@ -1880,7 +1880,7 @@ Derrick,Lewis,The Black Beast,75.0,260.0,79.0,Orthodox,25,8,0,1985-02-07
 Bevon,Lewis,,75.0,185.0,79.0,Orthodox,7,3,0,1991-05-05
 Brandon,Lewis,,64.0,135.0,65.0,Orthodox,5,1,0,1997-08-02
 Chi,Lewis-Parry,Chopper,81.0,243.0,,,7,0,1,1983-08-10
-Li,Jingliang,The Leech,72.0,170.0,71.0,Orthodox,18,6,0,1988-03-20
+Li,Jingliang,The Leech,72.0,170.0,71.0,Orthodox,18,7,0,1988-03-20
 Jess,Liaudin,The Joker,69.0,170.0,72.0,Orthodox,20,11,0,
 Chuck,Liddell,The Iceman,74.0,205.0,76.0,Orthodox,21,8,0,1969-12-17
 Sam,Liera,,,,,,12,10,0,
@@ -1996,7 +1996,7 @@ Demian,Maia,,73.0,170.0,72.0,Southpaw,28,11,0,1977-11-06
 Jennifer,Maia,,64.0,125.0,64.0,Orthodox,19,7,1,1988-10-06
 Levan,Makashvili,The Hornet,68.0,145.0,68.0,Orthodox,15,2,1,1989-01-07
 John,Makdessi,The Bull,68.0,155.0,68.0,Orthodox,18,7,0,1985-05-03
-Islam,Makhachev,,70.0,155.0,70.0,Southpaw,20,1,0,1991-10-27
+Islam,Makhachev,,70.0,155.0,70.0,Southpaw,21,1,0,1991-10-27
 Aliev,Makhmud,,66.0,195.0,,Southpaw,0,1,0,1970-02-13
 Zach,Makovsky,Fun Size,64.0,125.0,64.0,Southpaw,20,8,0,1983-04-19
 Jeremy,Malaterre,,71.0,155.0,,,4,2,0,
@@ -2311,7 +2311,7 @@ Ian,Murphy,,73.0,185.0,,Orthodox,1,1,0,1985-06-14
 Jon,Murphy,Man of Faith,75.0,260.0,,Orthodox,6,4,0,1977-08-09
 Lauren,Murphy,Lucky,65.0,125.0,67.0,Orthodox,15,5,0,1983-07-27
 Patrick,Murphy,,72.0,170.0,,,5,3,0,
-Lerone,Murphy,The Miracle,69.0,145.0,73.0,Orthodox,10,0,1,1991-07-22
+Lerone,Murphy,The Miracle,69.0,145.0,73.0,Orthodox,11,0,1,1991-07-22
 Lee,Murray,Lightning,75.0,185.0,,Orthodox,8,2,1,1977-09-12
 Jesse,Murray,Hollywood,75.0,205.0,78.0,Orthodox,8,4,0,1993-01-26
 Khalid,Murtazaliev,,72.0,185.0,76.0,Orthodox,14,2,0,1993-07-15
@@ -2345,7 +2345,7 @@ Yasuhito,Namekawa,,69.0,205.0,,Orthodox,25,16,4,1974-10-27
 Nad,Narimani,Smiler,68.0,145.0,70.0,Orthodox,12,4,0,1987-04-14
 Roger,Narvaez,Silverback,75.0,185.0,,Southpaw,8,3,0,1983-09-09
 Fabio,Nascimento,Negao,70.0,185.0,,Orthodox,11,6,0,
-Allan,Nascimento,Puro Osso,68.0,125.0,69.0,Orthodox,17,5,0,1991-09-11
+Allan,Nascimento,Puro Osso,68.0,125.0,69.0,Orthodox,17,6,0,1991-09-11
 Rodrigo,Nascimento,Ze Colmeia,74.0,246.0,80.0,Orthodox,9,1,0,1992-11-26
 Bobby,Nash,,72.0,170.0,74.0,Orthodox,8,4,0,1990-03-26
 Reza,Nasri,,71.0,205.0,,Orthodox,0,1,0,
@@ -2439,7 +2439,7 @@ Takahiro,Oba,,68.0,200.0,,Southpaw,5,7,1,
 Nobuhiro,Obiya,,68.0,145.0,,Orthodox,12,5,1,1981-01-15
 Christian,Ocon,,68.0,135.0,69.0,Orthodox,2,1,0,1996-02-05
 Richard,Odoms,The Black Eagle,77.0,265.0,,Orthodox,13,3,0,1975-05-08
-Volkan,Oezdemir,No Time,74.0,205.0,75.0,Orthodox,17,5,0,1989-09-19
+Volkan,Oezdemir,No Time,74.0,205.0,75.0,Orthodox,17,6,0,1989-09-19
 Naoya,Ogawa,,76.0,255.0,,Orthodox,7,2,0,1968-03-31
 Andy,Ogle,The Little Axe,68.0,145.0,69.0,Orthodox,9,6,0,1989-02-16
 Michiyoshi,Ohara,,70.0,205.0,,Orthodox,0,2,0,
@@ -2450,7 +2450,7 @@ JJ,Okanovich,The Bosnian Bomber,71.0,155.0,76.0,Orthodox,7,1,0,1990-11-04
 Kazuki,Okubo,,71.0,175.0,,Orthodox,7,9,0,
 Masakatsu,Okuda,,,,,,8,5,0,
 Aleksei,Oleinik,The Boa Constrictor,74.0,240.0,80.0,Orthodox,59,16,1,1977-06-20
-Michal,Oleksiejczuk,Lord,72.0,205.0,74.0,Southpaw,15,4,0,1995-02-22
+Michal,Oleksiejczuk,Hussar,72.0,205.0,74.0,Southpaw,16,4,0,1995-02-22
 Rafaello,Oliveira,Tractor,68.0,155.0,71.0,Orthodox,17,8,0,1982-01-26
 Charles,Oliveira,Do Bronx,70.0,155.0,74.0,Orthodox,31,8,0,1989-10-17
 Jorge,Oliveira,,73.0,205.0,,,5,3,1,
@@ -2602,7 +2602,7 @@ Tony,Petarra,,71.0,196.0,,Orthodox,2,3,1,
 Tommy,Petersen,,,155.0,,,2,3,0,
 Cory,Peterson,LA Giant,83.0,400.0,,Orthodox,2,1,0,
 Steven,Peterson,Ocho,70.0,145.0,70.0,Orthodox,19,9,0,1990-05-29
-Andre,Petroski,,72.0,185.0,73.0,Switch,6,2,0,1991-06-12
+Andre,Petroski,,72.0,185.0,73.0,Switch,7,2,0,1991-06-12
 Armen,Petrosyan,Superman,75.0,205.0,71.0,Orthodox,6,1,0,1990-11-02
 Seth,Petruzelli,The Silverback,72.0,205.0,76.0,Orthodox,14,8,0,1979-12-03
 Peter,Petties,The Joker,71.0,145.0,72.0,Southpaw,5,3,0,1990-12-20
@@ -2715,7 +2715,7 @@ Amador,Ramirez,,,135.0,,,5,4,0,1990-06-14
 Andrew,Ramm,The,73.0,160.0,,,4,4,0,
 Ian,Rammel,,72.0,185.0,,,7,8,0,1985-07-22
 Luis,Ramos,Beicao,68.0,170.0,,Orthodox,20,10,2,1981-01-18
-Ricardo,Ramos,,69.0,145.0,72.0,Orthodox,15,3,0,1995-08-01
+Ricardo,Ramos,,69.0,145.0,72.0,Orthodox,15,4,0,1995-08-01
 Davi,Ramos,Tasmanian Devil,66.0,155.0,70.0,Orthodox,10,4,0,1986-11-05
 Vernon,Ramos Ho,,66.0,170.0,,Orthodox,3,1,0,1992-06-03
 Kevin,Randleman,The Monster,70.0,205.0,,Orthodox,17,16,0,1971-08-10
@@ -2762,7 +2762,7 @@ Gaston,Reyno,Tonga,72.0,145.0,,,6,2,0,1986-11-11
 Johnny,Rhodes,,72.0,210.0,,Orthodox,2,1,0,
 Mike,Rhodes,Biggie,73.0,170.0,74.0,Orthodox,10,5,0,1989-12-04
 Lucrezia,Ria,,66.0,125.0,,Orthodox,8,2,0,1992-06-24
-Amanda,Ribas,,63.0,125.0,66.0,Orthodox,10,2,0,1993-08-26
+Amanda,Ribas,,63.0,125.0,66.0,Orthodox,11,2,0,1993-08-26
 Vitor,Ribeiro,Shaolin,68.0,154.0,,Orthodox,20,5,0,1979-02-24
 Will,Ribeiro,,68.0,135.0,,Orthodox,10,2,0,1983-02-17
 Mike,Ricci,The Martian,72.0,155.0,76.0,Southpaw,11,5,0,1986-03-18
@@ -2902,7 +2902,7 @@ Frankie,Saenz,,66.0,135.0,66.0,Orthodox,13,7,0,1980-08-12
 Saparbeg,Safarov,,73.0,185.0,78.0,Orthodox,9,3,0,1986-10-14
 Tarec,Saffiedine,Sponge,70.0,170.0,70.0,Switch,16,7,0,1986-09-06
 Jason,Saggo,,71.0,155.0,71.0,Orthodox,12,4,0,1985-11-23
-Benoit,Saint Denis,God of War,71.0,170.0,73.0,Southpaw,8,0,0,1995-12-18
+Benoit,Saint Denis,God of War,71.0,170.0,73.0,Southpaw,8,1,0,1995-12-18
 Ovince,Saint Preux,,75.0,205.0,80.0,Southpaw,25,16,0,1983-04-08
 Lukasz,Sajewski,Wookie,68.0,155.0,71.0,Orthodox,13,3,0,1990-11-27
 Yukio,Sakaguchi,,69.0,185.0,,Orthodox,6,7,0,1973-07-26
@@ -2942,7 +2942,7 @@ Robert,Sanchez,Littlefury,66.0,125.0,66.0,Orthodox,8,2,0,1986-03-05
 Jesse,Sanders,,72.0,170.0,,Orthodox,23,7,0,
 Luke,Sanders,Cool Hand,66.0,135.0,67.0,Southpaw,13,5,0,1985-12-12
 Jerrod,Sanders,J-Reazie,68.0,135.0,72.0,Orthodox,16,3,0,1979-10-01
-Cory,Sandhagen,,71.0,135.0,70.0,Switch,14,3,0,1992-04-20
+Cory,Sandhagen,,71.0,135.0,70.0,Switch,14,4,0,1992-04-20
 Hugo,Sandoval,,,135.0,,,2,3,0,
 Raul,Sandoval,,,130.0,,,3,3,0,
 Joseph,Sandoval,,67.0,135.0,,Southpaw,7,7,0,1986-05-11
@@ -3192,6 +3192,7 @@ Bobby,Southworth,,74.0,205.0,,Orthodox,10,6,0,1969-12-16
 Jacare,Souza,,73.0,185.0,72.0,Orthodox,26,10,0,1979-12-07
 Edimilson,Souza,Kevin,72.0,145.0,74.0,Orthodox,15,5,0,1984-10-17
 Livinha,Souza,The Brazilian Gangsta,63.0,115.0,63.0,Orthodox,14,4,0,1991-03-11
+Bruno,Souza,The Tiger,70.0,145.0,,,10,1,0,1996-03-07
 Charon,Spain,,69.0,155.0,,,14,26,0,1988-03-11
 Chris,Spang,The Kiss,74.0,170.0,,Orthodox,6,3,0,1987-11-26
 Andreas,Spang,Sweet Swede,73.0,185.0,,,9,3,0,1978-11-07
@@ -3337,7 +3338,7 @@ Danielle,Taylor,Dynamite,60.0,115.0,60.0,Orthodox,9,4,0,1989-10-25
 J.T,Taylor,The Outlaw,70.0,,,,7,7,0,
 James,Te Huna,,74.0,185.0,75.0,Orthodox,16,9,0,1981-09-29
 Shawn,Teed,,77.0,265.0,,Orthodox,5,2,0,1992-02-13
-Glover,Teixeira,,74.0,205.0,76.0,Orthodox,32,7,0,1979-10-28
+Glover,Teixeira,,74.0,205.0,76.0,Orthodox,33,7,0,1979-10-28
 John,Teixeira,Macapa,67.0,145.0,,Orthodox,21,2,2,1986-11-18
 Ewerton,Teixeira,,73.0,242.0,,,3,1,0,1982-02-13
 Tra,Telligman,Trauma,74.0,233.0,,Orthodox,7,5,1,1965-02-07
@@ -3418,7 +3419,7 @@ Jumabieke,Tuerxun,The Wild Wolf,67.0,135.0,,Orthodox,19,4,1,1986-04-17
 Tom,Tuggle,The Law,74.0,250.0,,Orthodox,0,3,0,
 Blair,Tugman,,72.0,135.0,,,10,6,0,
 Tai,Tuivasa,Bam Bam,74.0,264.0,75.0,Southpaw,13,3,0,1993-03-16
-Zubaira,Tukhugov,Warrior,68.0,145.0,68.0,Orthodox,19,5,1,1991-01-15
+Zubaira,Tukhugov,Warrior,68.0,145.0,68.0,Orthodox,20,5,1,1991-01-15
 Teila,Tuli,,72.0,430.0,,Orthodox,0,1,0,1969-06-14
 Albert,Tumenov,Einstein,71.0,170.0,73.0,Orthodox,18,4,0,1991-12-26
 Maimaiti,Tuohati,,,,,,0,0,0,
@@ -3428,12 +3429,12 @@ Wellington,Turman,The Prodigy,72.0,185.0,72.0,Orthodox,17,5,0,1996-07-22
 Courtney,Turner,,74.0,170.0,,,0,3,0,
 Jalin,Turner,The Tarantula,75.0,155.0,77.0,Southpaw,11,5,0,1995-05-18
 Austin,Tweedy,,69.0,155.0,,Orthodox,8,2,0,1990-09-25
-Marcin,Tybura,Tybur,75.0,249.0,78.0,Orthodox,22,6,0,1985-11-09
+Marcin,Tybura,Tybur,75.0,249.0,78.0,Orthodox,22,7,0,1985-11-09
 Alberto,Uda,,75.0,185.0,,Orthodox,12,2,0,1984-08-08
 Ryuki,Ueyama,,71.0,180.0,,Southpaw,12,18,5,1976-04-17
 Christian,Uflacker,,71.0,170.0,,,5,0,0,1985-08-04
 Andy,Uhrich,,72.0,170.0,,,11,6,0,
-Tagir,Ulanbekov,,67.0,125.0,70.0,Southpaw,13,1,0,1991-08-07
+Tagir,Ulanbekov,,67.0,125.0,70.0,Southpaw,14,1,0,1991-08-07
 Carlos,Ulberg,Black Jag,76.0,205.0,77.0,Orthodox,5,1,0,1990-11-07
 Gasan,Umalatov,Cobra,71.0,170.0,71.0,Orthodox,17,4,2,1982-09-11
 Jeremy,Umphries,,,160.0,,,5,2,0,
@@ -3523,7 +3524,7 @@ Falaniko,Vitale,Niko,70.0,185.0,,Orthodox,30,11,0,1974-07-14
 Bobby,Voelker,Vicious,72.0,170.0,74.0,Orthodox,19,13,0,1979-04-26
 Alexander,Volkanovski,The Great,66.0,145.0,71.0,Orthodox,23,1,0,1988-09-29
 Jacob,Volkmann,Christmas,69.0,155.0,71.0,Southpaw,19,7,0,1980-09-05
-Alexander,Volkov,Drago,79.0,250.0,80.0,Orthodox,33,9,0,1988-10-24
+Alexander,Volkov,Drago,79.0,250.0,80.0,Orthodox,34,9,0,1988-10-24
 Jason,Von Flue,Live Wire,72.0,170.0,,Orthodox,14,12,1,1975-08-01
 Milco,Voorn,,,220.0,,Orthodox,20,11,1,
 Mark,Vorgeas,,70.0,135.0,,,5,3,1,
@@ -3667,7 +3668,7 @@ Hiroko,Yamanaka,Cat's Eye,71.0,135.0,,,13,3,0,1978-10-24
 Goiti,Yamauchi,,70.0,145.0,,,21,3,0,1993-01-05
 Takeshi,Yamazaki,,68.0,139.0,,Southpaw,15,12,3,
 Yan,Xiaonan,,65.0,115.0,63.0,Orthodox,13,2,0,1989-06-16
-Petr,Yan,No Mercy,67.0,135.0,67.0,Switch,15,2,0,1993-02-11
+Petr,Yan,No Mercy,67.0,135.0,67.0,Switch,16,2,0,1993-02-11
 Yan,Qihui,Queen Kong,63.0,125.0,62.0,Orthodox,11,4,0,1996-10-01
 Adam,Yandiev,Boroda,69.0,185.0,74.0,Orthodox,9,1,0,1988-08-07
 Adrian,Yanez,,67.0,135.0,70.0,Orthodox,14,3,0,1993-11-29
@@ -3703,7 +3704,7 @@ Anton,Zafir,The Professor,71.0,170.0,,Orthodox,7,3,0,1987-05-10
 Aiemann,Zahabi,,68.0,135.0,68.0,Orthodox,8,2,0,1987-11-19
 Joao,Zaiden,,,205.0,,,10,3,0,1993-03-16
 Youssef,Zalal,The Moroccan Devil,70.0,145.0,72.0,Switch,10,5,0,1996-09-04
-Elizeu,Zaleski dos Santos,Capoeira,71.0,170.0,73.0,Orthodox,22,7,0,1986-12-11
+Elizeu,Zaleski dos Santos,Capoeira,71.0,170.0,73.0,Orthodox,23,7,0,1986-12-11
 Zach,Zane,The Hurricane,67.0,145.0,69.0,Southpaw,10,7,0,1989-12-14
 Roger,Zapata,Viva,71.0,170.0,,Southpaw,4,2,0,1986-05-09
 Marius,Zaromskis,The Whitemare,69.0,170.0,,Orthodox,20,9,0,1980-07-30

@@ -176,7 +176,7 @@ def fighter_data():
         fighters_df.info()
         fighters_df.dtypes
         print(fighters_df)
-        fighters_df.to_csv('../data/fighters.csv', mode='a', index=False, header=False)
+        fighters_df.to_csv('../data/fighters.csv', mode='a', index=False, header=True)
 
 #------------------------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------------------------
@@ -224,12 +224,35 @@ def get_events():
         
         #--------------------------------------------------------------------------------------------
         
+        # remove the , from the date column and convert to useable date
+        event_details_df['Date'] = event_details_df['Date'].str.replace(',','')
+        event_details_df['Date'] = pd.to_datetime(event_details_df['Date'])
+        
+        #--------------------------------------------------------------------------------------------
+        
+        # Split out the win method column to have win type and win method
+        event_details_df[['Win decided by', 'Win Method']] = event_details_df['Method'].str.split(" ",1, expand=True) 
+        event_details_df['Win decided by'] = event_details_df['Win decided by'].str.strip()
+        event_details_df['Win Method'] = event_details_df['Win Method'].str.strip()
+        
+        #--------------------------------------------------------------------------------------------
+        
+        # Create the winner column based on W/L column
+        event_details_df['Winner'] = np.where(event_details_df['W/L'].str.contains('win'), event_details_df['Fighter 1'],event_details_df['W/L'])
+        event_details_df['Loser'] = np.where(event_details_df['W/L'].str.contains('win'), event_details_df['Fighter 2'], event_details_df['W/L'])
+        event_details_df['Winner'] = event_details_df['Winner'].str.replace('draw  draw', 'DRAW').replace('nc  nc', 'NO CONTEST')
+        event_details_df['Loser'] = event_details_df['Loser'].str.replace('draw  draw', 'DRAW').replace('nc  nc', 'NO CONTEST')
+
+        #--------------------------------------------------------------------------------------------
+        
         # Reset the columns to what is needed
-        event_details_df = event_details_df.reindex(columns=['W/L', 
-                                                             'Fighter 1', 
+        event_details_df = event_details_df.reindex(columns=['Fighter 1', 
                                                              'Fighter 2',
                                                              'Weight class', 
-                                                             'Method',
+                                                             'Winner',
+                                                             'Loser',
+                                                             'Win decided by',
+                                                             'Win Method',
                                                              'Round', 
                                                              'Time', 
                                                              'Event',
