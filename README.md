@@ -186,7 +186,7 @@ This is the data information in the events.csv file<br>
 ### The Fight Informaton
 This is the data information in the fight_detaisl.csv file<br>
 *_(After normalization and export but before cleaning and dealing with null/missing values)_*<br><br>
-![Fight Details CSV Info](https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/fights_dtypes.png)
+<img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/fights_dtypes.png" width=30% height=30%>
 <br><br>
 ![Fight CSV Info](https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/fights_info.png)
 
