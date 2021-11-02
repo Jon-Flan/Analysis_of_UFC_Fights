@@ -190,6 +190,13 @@ This is the data information in the fight_detaisl.csv file<br>
 <br><br>
 ![Fight CSV Info](https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/fights_info.png)
 
+## Data Flow: Part 1
+The Data flow from the website to a merged dataset before cleaning and feature creation has taken place. <br>
+**Note:** Not all attributes from each dataset are used but are still taken during initial scraping and normalisation, <br>
+To be used in the merging process and for data validation compared to the website during the data retreival.<br>
+<br>
+<img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/data_flow/data_flow_pt1.png" width=100% height=100%>
+
 # Tools Used
 All tools and languages used, including packages from within each language <br>
 <br>
