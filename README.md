@@ -240,11 +240,15 @@ def main():
       
         # merge and drop dupliactes due to rematches and duplicate fighter info
         df_merged = pd.merge(df_1, df_f1, on=['Fighter 1'], how='left')
-        df_merged = df_merged.drop_duplicates(subset=['Fighter 1', 'Fighter 2', 'Event', 'Win decided by'], 
-                                                keep='last')
+        df_merged = df_merged.drop_duplicates(subset=['Fighter 1',
+                                                      'Fighter 2', 
+                                                      'Event', 
+                                                      'Win decided by'],keep='last')
         df_merged = pd.merge(df_merged, df_f2, on=['Fighter 2'], how='left')
-        df_merged = df_merged.drop_duplicates(subset=['Fighter 1', 'Fighter 2', 'Event', 'Win decided by'], 
-                                                keep='last')
+        df_merged = df_merged.drop_duplicates(subset=['Fighter 1', 
+                                                      'Fighter 2', 
+                                                      'Event', 
+                                                      'Win decided by'], keep='last')
         
         # More merging methods inplace above and below this snippet
         
