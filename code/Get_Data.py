@@ -176,7 +176,7 @@ def fighter_data():
         fighters_df.info()
         fighters_df.dtypes
         print(fighters_df)
-        fighters_df.to_csv('../data/fighters.csv', mode='a', index=False, header=True)
+        fighters_df.to_csv('../data/fighters.csv', index=False, header=True)
 
 #------------------------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------------------------
@@ -274,7 +274,7 @@ def event_details_data():
         event_details_df.info()
         event_details_df.dtypes
         print(event_details_df)
-        event_details_df.to_csv('../data/events.csv', mode='a', index=False, header=True)
+        event_details_df.to_csv('../data/events.csv', index=False, header=True)
 
 #------------------------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------------------------
@@ -529,7 +529,7 @@ def fight_details_data():
         fight_details_df.info()
         fight_details_df.dtypes
         print(fight_details_df)
-        fight_details_df.to_csv('../data/fights.csv', mode='a', index=False, header=True)
+        fight_details_df.to_csv('../data/fights.csv', index=False, header=True)
 
 #-------------------------------------------------------------------------------------------------------------------------
 #------------------------------------------------------------------------------------------------------------------------
