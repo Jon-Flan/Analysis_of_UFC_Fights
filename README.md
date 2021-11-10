@@ -15,7 +15,21 @@ For my personal computer hardware / internet bandwidth combination it took:<br>
 **_Approx 5hrs_** to retrieve all data.<br>
 <br>
 Tech information on machine used to collect data is:<br>
-
+ <table>
+  <tr>
+    <th>CPU</th>
+    <th>Memory</th>
+    <th>Connection Speed (Down)</th>
+    <th>Connection Speed (Up)</th>
+  </tr>
+  <tr>
+    <td>AMD Ryzen 5 3600X</td>
+    <td>128GB @ 3600mhz</td>
+    <td>60Mbps</td>
+    <td>40Mbps</td>
+  </tr>
+</table> 
+    
 ### Collecting the Data
 To collect the Data, Get_Data.py can be ran which will update the data contained in the csv files.<br>
 Get_Data.py is to be ran directly from the terminal/Command Line. <br>
