@@ -16,16 +16,6 @@ For my personal computer hardware / internet bandwidth combination it took:<br>
 <br>
 Tech information on machine used to collect data is:<br>
 
-
-### Updating Data
-If the program has been ran already, then only new information will be collected and appended to the <br>
-csv files. This will save time in updating data and stop the need to run the program entirely everytime.<br>
-<br>
-To do this, a list of URL's visited is kept and checked against before proceeding with the scraping. <br>
-Caveats to this are:<br> 
-1. A flat file of all URL's is to be maintained 
-2. When updating data the scraper must scrape the initial URL's to see if anything has changed.<br>
-
 ### Collecting the Data
 To collect the Data, Get_Data.py can be ran which will update the data contained in the csv files.<br>
 Get_Data.py is to be ran directly from the terminal/Command Line. <br>
@@ -41,7 +31,7 @@ Options are:<br>
 - option 2: Fighters
 - option 3: Events
 <br>
-Data is updated on the website after each new fight event. Be careful not to run the program **DURING** a live a event.<br>
+Be careful not to run the program DURING a live a event.<br>
 Your data will be skewed. <br>
 <br>
 
@@ -192,12 +182,35 @@ This is the data information in the fight_detaisl.csv file<br>
 <br><br>
 ![Fight CSV Info](https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/fights_info.png)
 
-## Data Flow: Part 1
-The Data flow from the website to a merged dataset before cleaning and feature creation has taken place. <br>
+# Preprocessing
+Once the data has been collected preprocessing can be begin. For this project instead of dealing with<br> 
+null values in the fighter.csv straight away, the data from each csv is merged into one complete dataset,<br>
+as this is where the analysis will take place and some figthers present in the figther information<br> 
+may not have been in a UFC fight. Meaning some null information may not be part of the main dataset anyway.<br>
+<br>
+For the fight details, in early UFC events not all information is available as well as weight classes differ<br>
+dramtically from what is used in Mixed Martial Arts promotions now, such as the Open Weight Class<br>
+<br>
+For these reasons all null and empty data will be dealt with after merging as well as feature creation.<br>
+
+## Data Merging
+The Data flow below shows from the website to a merged dataset before cleaning and feature creation. <br>
 **Note:** Not all attributes from each dataset are used but are still taken during initial scraping and normalisation, <br>
-To be used in the merging process and for data validation compared to the website during the data retreival.<br>
+to be used in the merging process and for data validation compared to the website during the data retreival.<br>
 <br>
 <img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/data_flow/data_flow_pt1.png" width=100% height=100%>
+
+### Merged Data Info
+The merged info is below before any initial visualization, cleaning, null handling, data type correction or feature creation<br>
+Here we end up with 81 columns and 6350 rows. Each fight is broken out by the event basic details such as the event name and date,<br>
+the winner/loser and how the fight ended. Then the each fighter details (Fighter 1 / Fighter 2) %& (F_1 / F_2) in the fight such as the<br> 
+strikes landed and thrown per body section,as well as position. Then the personal info such as height, stance DOB and reach.<br>
+
+<img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/merged_not_cleaned_dtypes.PNG" width=50% height=100%>
+
+Table example: <br>
+
+<img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/merged_not_cleaned_info.PNG" width=200% height=100% style="overflow-x:scroll">
 
 # Tools Used
 All tools and languages used, including packages from within each language <br>
