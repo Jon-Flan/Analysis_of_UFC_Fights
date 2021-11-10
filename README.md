@@ -191,7 +191,7 @@ may not have been in a UFC fight. Meaning some null information may not be part 
 For the fight details, in early UFC events not all information is available as well as weight classes differ<br>
 dramtically from what is used in Mixed Martial Arts promotions now, such as the Open Weight Class<br>
 <br>
-For these reasons all null and empty data will be dealt with after merging as well as feature creation.<br>
+For these reasons all null, empty data as well as feature creation will be dealt with after merging.<br>
 
 ## Data Merging
 The Data flow below shows from the website to a merged dataset before cleaning and feature creation. <br>
@@ -199,6 +199,45 @@ The Data flow below shows from the website to a merged dataset before cleaning a
 to be used in the merging process and for data validation compared to the website during the data retreival.<br>
 <br>
 <img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/data_flow/data_flow_pt1.png" width=100% height=100%>
+
+## Merging the Data
+To merge the data. After the collection process has completed and csv files are created,<br>
+run the following command in terminal/comman prompt
+**python command may differ depending on your installation of python**
+
+```Terminal
+python Merge_Data.py
+```
+Will initiate the process, NOTE: No additional arguments are needed for running this script.
+
+```Python
+def main():
+    # get the final merged output
+    data = merge_data()
+    data
+    print_and_export_data(data)
+    
+# merge the fighter info onto the fight info
+    def get_merged_fighter_info():
+        # copies of needed dataframes
+        df_1 = events_and_fights.copy()
+        df_f1 = fighter_1.copy()
+        df_f2 = fighter_2.copy()
+      
+        # merge and drop dupliactes due to rematches and duplicate fighter info
+        df_merged = pd.merge(df_1, df_f1, on=['Fighter 1'], how='left')
+        df_merged = df_merged.drop_duplicates(subset=['Fighter 1', 'Fighter 2', 'Event', 'Win decided by'], 
+                                                keep='last')
+        df_merged = pd.merge(df_merged, df_f2, on=['Fighter 2'], how='left')
+        df_merged = df_merged.drop_duplicates(subset=['Fighter 1', 'Fighter 2', 'Event', 'Win decided by'], 
+                                                keep='last')
+        
+        # More merging methods inplace above and below this snippet
+        
+        data = get_merged_fighter_info()
+    
+    return data 
+```
 
 ### Merged Data Info
 The merged info is below before any initial visualization, cleaning, null handling, data type correction or feature creation<br>
