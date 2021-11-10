@@ -276,6 +276,8 @@ Spyder IDE from within the Anaconda3 framework
 - tqdm<br>
 - BeautifulSoup<br>
 - requests<br>
+- sys<br>
+- time<br>
 
 ## R
 R Studio
