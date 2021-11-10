@@ -12,7 +12,7 @@ In total 10,658 unique url's where processed for the initial Datasets. Using thi
 to collect the data can take several hours to complete depending on computer hardware and internet bandwidth.<br>
     
 For my personal computer hardware / internet bandwidth combination it took:<br>
-**_Approx 5hrs_** to retrieve all data.<br>
+**_Approx 5hrs_** to retrieve all data.(this can be adjusted as sleep timer set at 1 second after each url)<br>
 <br>
 Tech information on machine used to collect data is:<br>
  <table>
@@ -284,15 +284,47 @@ Instructions here: https://rstudio-education.github.io/hopr/starting.html <br>
 ## Python 
 Spyder IDE from within the Anaconda3 framework
 #### Packages Imported:
-- Pandas<br>
-- Numpy <br>
-- string<br>
-- tqdm<br>
-- BeautifulSoup<br>
-- requests<br>
-- sys<br>
-- time<br>
 
-## R
-R Studio
+ <table>
+  <tr>
+    <th>Package</th>
+    <th>Purpose</th>
+  </tr>
+  <tr>
+    <td>Pandas</td>
+    <td>For URL scraping, Data manipulation and prepartion</td>
+  </tr>
+  <tr>
+    <td>Numpy</td>
+    <td>Data manipulation and preparation</td>
+  </tr>
+  <tr>
+    <td>string</td>
+    <td>Generating strings</td>
+  </tr>
+    <tr>
+    <td>tqdm</td>
+    <td>Console output for progress bar</td>
+  </tr>
+    <tr>
+    <td>BeautifulSoup</td>
+    <td>URL scraping</td>
+  </tr>
+  <tr>
+    <td>requests</td>
+    <td>html connectivity</td>
+  </tr>
+  <tr>
+    <td>sys</td>
+    <td>Exit and output to console</td>
+  </tr>
+  <tr>
+    <td>time</td>
+    <td>Setting sleep time between URL visits</td>
+  </tr>
+  <tr>
+    <td>Matplotlib</td>
+    <td>Visualization and data exploration</td>
+  </tr>
+</table> 
 
