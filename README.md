@@ -2,6 +2,7 @@
 An analysis of Mixed Martial Arts fights taken place under the promotion of the Ultimate Fighting Championship (UFC).
 <br><br>
 <img src="https://piglordmma.com/wp-content/uploads/2020/04/ufc-octagon.jpg">
+# Abstract
 
 # Data Collection
 Data for this analysis has been collected through http://www.ufcstats.com <br>
@@ -198,7 +199,7 @@ This is the data information in the fight_detaisl.csv file<br>
 
 # Preprocessing
 Once the data has been collected preprocessing can be begin. For this project instead of dealing with<br> 
-null values in the fighter.csv straight away, the data from each csv is merged into one complete dataset,<br>
+null values straight away, the data from each csv is merged into one complete dataset,<br>
 as this is where the analysis will take place and some figthers present in the figther information<br> 
 may not have been in a UFC fight. Meaning some null information may not be part of the main dataset anyway.<br>
 <br>
@@ -212,17 +213,18 @@ The Data flow below shows from the website to a merged dataset before cleaning a
 **Note:** Not all attributes from each dataset are used but are still taken during initial scraping and normalisation, <br>
 to be used in the merging process and for data validation compared to the website during the data retreival.<br>
 <br>
-<img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/data_flow/data_flow_pt1.png" width=100% height=100%>
+<img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/data_flow/data_flow_pt1.png" width=75% height=75%>
 
 ## Merging the Data
-To merge the data. After the collection process has completed and csv files are created,<br>
+After the collection process has completed and csv files are created,<br>
 run the following command in terminal/comman prompt
 **python command may differ depending on your installation of python**
 
 ```Terminal
 python Merge_Data.py
 ```
-Will initiate the process, NOTE: No additional arguments are needed for running this script.
+Running the above command will initiate the merging process.<br>
+NOTE: No additional arguments are needed for running this script.<br>
 
 ```Python
 def main():
@@ -258,10 +260,10 @@ def main():
 ```
 
 ### Merged Data Info
-The merged info is below before any initial visualization, cleaning, null handling, data type correction or feature creation<br>
-Here we end up with 81 columns and 6350 rows. Each fight is broken out by the event basic details such as the event name and date,<br>
-the winner/loser and how the fight ended. Then the each fighter details (Fighter 1 / Fighter 2) %& (F_1 / F_2) in the fight such as the<br> 
-strikes landed and thrown per body section,as well as position. Then the personal info such as height, stance DOB and reach.<br>
+The merged info below is before any initial visualization, cleaning, null handling, data type correction or feature creation<br>
+Here we end up with 81 columns and 6350 rows. Each fight is broken out by the events basic details such as the event name and date,<br>
+the winner/loser, and how the fight ended. Then each fight is broken down by each fighters details, denoted by (Fighter 1 / Fighter 2) and (F_1 / F_2),<br> 
+details include the strikes landed and thrown per body section,as well as position, as well as personal info such as height, stance DOB and reach.<br>
 
 <img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/merged_not_cleaned_dtypes.PNG" width=50% height=100%>
 
@@ -269,7 +271,27 @@ Table example: <br>
 
 <img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/merged_not_cleaned_info.PNG" width=200% height=100% style="overflow-x:scroll">
 
-# Tools Used
+## Initial Feature Selection
+
+## Initial Exploration
+
+## Null - Empty Values
+
+## Clean Data set
+
+# Knowledge Discovery
+
+## Secondary Exploration
+
+## Feature Creation
+
+## Tertiary Exploration
+
+# Insights
+
+# Further Information
+
+## Tools Used
 All tools and languages used, including packages from within each language <br>
 <br>
 #### Prerequisites are:
