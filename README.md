@@ -271,13 +271,13 @@ Table example: <br>
 
 <img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/merged_not_cleaned_info.PNG" width=200% height=100% style="overflow-x:scroll">
 
-## Initial Feature Selection
+## Data Cleaning
 
-## Initial Exploration
+### Initial Feature Selection
 
-## Null - Empty Values
+### Initial Exploration & Null - Empty Values
 
-## Clean Data set
+### Clean Data set
 
 # Knowledge Discovery
 
