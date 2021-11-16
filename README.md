@@ -352,5 +352,13 @@ Spyder IDE from within the Anaconda3 framework
     <td>Matplotlib</td>
     <td>Visualization and data exploration</td>
   </tr>
+  <tr>
+    <td>Seaborn</td>
+    <td>Visualization and data exploration</td>
+  </tr>
+  <tr>
+      <td>Sklearn</td>
+      <td>Random Forest Classification</td>
+  </tr>
 </table> 
 
