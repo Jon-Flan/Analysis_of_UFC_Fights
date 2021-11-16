@@ -371,7 +371,19 @@ win_types_df_1 = df_win_types[~df_win_types['Win decided by'].str.contains('Othe
 
 ```
 
+<img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/graphs/Win%20Types%20Adjusted%20Final.jpg" width=50% height=50%>
+<br>
 
+#### Win Methods
+Win methods are a sub category of the win types and are the in fight actions that determined a win type<br>
+Checking for Null in win method:
+- DQ           18
+- Decision      0
+- KO/TKO      129
+- SUB           0
+<br>
+To deal with the DQ (disqualified) NaN's are replace NaN with "Disqualified" <br>
+Because the disqualified metric doesn't give any information for the reason for disqualification.<br>
 
 ### Clean Data set
 
