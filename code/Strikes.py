@@ -11,14 +11,10 @@ import pandas as pd
 # import and create new dataframe
 def import_adjust():
     # file
-    file = ('../data/main_data_not_cleaned.csv')
+    file = ('../data/main_data.csv')
     # dataframe
     df = pd.read_csv(file)
-    
-    # Fill na for Stance to 'Not Recorded
-    df['Stance F_1'].fillna('Not Recorded', inplace=True)
-    df['Stance F_2'].fillna('Not Recorded', inplace=True)
-    
+        
     # create new blank dataframes for fighters 1 and 2 per fight
     fighters_1 = pd.DataFrame(columns=['Weight class', 'Stance', 'Head Landed', 
                                        'Body Landed', 'Leg Landed'])
