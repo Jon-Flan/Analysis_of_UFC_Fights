@@ -20,6 +20,7 @@ import numpy as np
 
 
 def main():
+    
     # get the final merged output
     data = merge_data()
     data
