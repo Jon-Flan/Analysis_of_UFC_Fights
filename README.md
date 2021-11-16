@@ -272,10 +272,106 @@ Table example: <br>
 <img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/merged_not_cleaned_info.PNG" width=200% height=100% style="overflow-x:scroll">
 
 ## Data Cleaning
+Data cleaning is carried out with Jupyter notebook in a scripting fashion. <br>
+The goal is to take the merged dataset and remove any unneeded features as well as deal with <br>
+the null/empty/missing values.
 
 ### Initial Feature Selection
+Initially when first visually exploring the dataset there are certain features that are not needed<br>
+Either because they have no bearing on analysis or they are duplicated else where. <br>
+<br>
+Initial Feature Removal:
+- First Name F_1 (duplicated in Fighter 1)
+- Last Name F_1 (duplicated in Fighter 1)
+- Nickname F_1 (not needed)
+- First Name F_2 (duplicated in Fighter 2)
+- Last Name F_2 (duplicated in Fighter 2)
+- Nickname F_2 (not needed)
+<br>
+
+```Python
+# remove the initial uneeded features from the dataset
+def remove_initial_features():
+    # create dataframe 
+    frame = import_and_create_df()
+    df = frame.copy()
+    
+    # remove columns that aren't needed
+    df.drop(['First Name F_1', 'First Name F_2',
+             'Last Name F_1', 'Last Name F_2',
+             'Nickname F_1', 'Nickname F_2'] , axis=1, inplace=True)
+    
+    return df
+```
+
+In the weight classes column there are two weight classes that are not needed. <br>
+Open weight and Super heavyweight. The reason being is only one fight has ever occured in Super heavyweight <br>
+and Open weight was from the initial tournaments held by the UFC. Both of these are before the Unified Rules implimentation. <br>
+<br>
+With these weight classes removed the below graph shows the weight classes and number of fights remaining. <br>
+<br>
+
+<img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/graphs/Weight%20Classes.jpg" width=50% height=50%>
 
 ### Initial Exploration & Null - Empty Values
+After the first few features that can be removed from the analysis by visual inspection, the dataset is <br>
+expllored column by column and Null/Empty values are dealt with along the way.
+#### Win Types
+Win types are the type of decision in the "Win decided by" column, some of these can be split out to make<br>
+the features easier to clean up and analyse later.<br>
+<br>
+
+<img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/graphs/Win%20Types.jpg" width=50% height=50%>
+
+Because the decisions types are seperated out by U-DEC, M-DEC and S-DEC, they can be combined into one level Decision and <br>
+move the U(Unanimous), M(Majority) and S(Split) into the Win Method column <br>
+
+
+Other Win decided types are:
+- CNC (Could not continue)
+- DQ (Disqualification)
+- Other
+- Overturned
+<br>
+These fights are fights that had no clear winner, CNC is where a fighter could not continue and no fighter was
+declared the winner. DQ is where one fighter was disqualified. Other we can investigate and Overturned is
+usually where a decision for the fight was overturned due to mitgating circumstances, usually a failed drug test
+after the fight. CNC, Other and Overturned were declared a no contest and no winner was decided. Where as the DQ had a winner announced.
+<br>
+Adjusting Decision methods and removing CNC, Other and Overturned.
+<br>
+<br>
+
+```Python
+# Convert the Win decided by to Decision and make additions to the Win Method Column 
+
+df_win_types['Win Method'] = np.where(df_win_types['Win decided by']=='M-DEC',
+                                      'Majority Decision',
+                                      df_win_types['Win Method'])
+
+df_win_types['Win Method'] = np.where(df_win_types['Win decided by']=='S-DEC',
+                                      'Split Decision',
+                                      df_win_types['Win Method'])
+
+df_win_types['Win Method'] = np.where(df_win_types['Win decided by']=='U-DEC',
+                                      'Unanimous Decision',
+                                      df_win_types['Win Method'])
+
+df_win_types['Win decided by'] = np.where(df_win_types['Win decided by'].str.contains('DEC'),
+                                          'Decision',
+                                          df_win_types['Win decided by'])
+
+
+
+# filtering out the unneeded Win by types
+win_types_df_1 = df_win_types[~df_win_types['Win decided by'].str.contains('Other',na=False) & 
+                        ~df_win_types['Win decided by'].str.contains('Overturned',na=False) &
+                        ~df_win_types['Win decided by'].str.contains('CNC',na=False)]
+
+
+```
+
+
 
 ### Clean Data set
 
