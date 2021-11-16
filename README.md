@@ -292,23 +292,19 @@ Table example: <br>
 # Further Information
 
 ## Tools Used
-All tools and languages used, including packages from within each language <br>
-<br>
+### Python 
+Spyder IDE from within the Anaconda3 framework <br>
+Jupyter Notebook from within the Anaconda3 framework <br>
+
 #### Prerequisites are:
 - Python3 is instaled
-- R and R Studio are installed
-- Anaconda3 is installed (Optional, any IDE capable of editing python is useable)
+- Anaconda3 is installed
 
 ##### Installing Anaconda Instructions: <br>
 **For Windows:** https://docs.anaconda.com/anaconda/install/windows/ <br>
 **For Mac**: https://docs.anaconda.com/anaconda/install/mac-os/ <br>
 **For Linux:** https://docs.anaconda.com/anaconda/install/linux/ <br>
 
-##### Installing R & R Studio: <br>
-Instructions here: https://rstudio-education.github.io/hopr/starting.html <br>
-
-## Python 
-Spyder IDE from within the Anaconda3 framework
 #### Packages Imported:
 
  <table>
