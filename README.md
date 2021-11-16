@@ -384,6 +384,35 @@ Checking for Null in win method:
 <br>
 To deal with the DQ (disqualified) NaN's are replace NaN with "Disqualified" <br>
 Because the disqualified metric doesn't give any information for the reason for disqualification.<br>
+<br>
+<img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/graphs/Win%20Types%20For%20KO_TKO%20Adjusted.jpg" width=50% height=50%>
+
+To deal with the KO/TKO nulls, the following were tried:
+- Randomly assigning Method to each of the NaNs
+- Using a prediction method to try predict and check the accuracy
+- Increase each one by an amount relative to its % of the method distribution
+<br>
+Random Forest Classifier only returned an accuracy of 0.78125 due to the overwhelming number of Punch KO/TKO<br>
+Random assigment worked next best but relative percent increase fit the shapoe of the distribution best. <br>
+<br>
+
+<img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/graphs/Win%20Types%20For%20KO_TKO%20%25%20increase.jpg" width=50% height=50%>
+
+<br>
+Leaving the overall win method with this distribution of methods<br>
+<img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/graphs/Win%20Methods%20Adjusted%20Final.jpg" width=75% height=75%>
+
+#### Fighter Weight
+
+#### Fighter Height & Reach
+
+#### Fighter Stance
+
+#### Fighter DOB
+
+#### Sig Str - Takedowns - Control
+
+#### Data Type Conversions
 
 ### Clean Data set
 
