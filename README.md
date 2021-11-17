@@ -448,15 +448,135 @@ fighters matches the upper bound of the the study mentioned above at 0.89. <br>
 
 <img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/graphs/weight_class_height_versus_reach.jpg" width=75% height=75%>
 
+There is definitely a visible corelation but the coefficient implies that a 1:1 relationship between<br>
+the fighters heights and their reaches could not be used.<br>
+<br>
+
+<img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/graphs/weight_class_reach_distro.jpg" width=75% height=75%>
+
+With the exception of Middleweight and Welterweight classes, there was no real gausian distributions <br>
+for the weight classes.<br>
+<br>
+Random Forest classification was then applied and returned am approx 97% accuracy through testing <br>
+<br>
+Confusion Matrix below<br>
+
+<img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/graphs/reach_confusion_matrix.jpg" width=75% height=75%>
+
+Random forrest classification was then used on the Fighters Reach.<br>
+The same process was repeated for height with similar results and Random Forrest Classification was applied to height also. <br>
+
 #### Fighter Stance
+When fighter stance was analysed 55 fighters had no stance recorded. <br>
+The overwhelming majority in each weight class used orthodox as a stance <br>
+<br>
+
+<img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/graphs/weight_class_stances.jpg" width=75% height=75%>
+
+It was determined that using the null value as it's own category would most likely produce the best results. To do that null values can be <br>
+replaced with 'Not Known' stance. <br>
+<br>
+
+<img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/graphs/weight_class_stances_adjusted.jpg" width=75% height=75%>
+
 
 #### Fighter DOB
+The age distribution appears normal, although slightly skewed towareds the younger end of the<br>
+distribution, it also appears centered around the 32 to 35 year age group. Which would make sense<br>
+for a physical sport such as MMA.<br>
+
+<img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/graphs/Age%20Distribution.jpg" width=75% height=75%>
+
+Mean, Median and Mode where investigated as methods for imputing the missing values per weight class. <br>
+It was determined that the Mean would be used. <br>
+Heavyweight: 1981-05-14 <br>
+Light Heavyweight: 1983-02-22<br>
+Lightweight: 1984-11-29  <br>
+Middleweight: 1983-01-17<br>
+Welterweight: 1983-12-22<br>
 
 #### Sig Str - Takedowns - Control
 
+1. The signiture strikes %
+2. Takedown %
+3. Control
+<br>
+After investigating to see why these contain null values. <br>
+For the sig str % it could filled with zero as the NaN is the results of 0 division between <br>
+Sig strike thrown versus Sig strike landed.<br>
+For the Contrl column it would be the fighter didn't acrue any seconds of control while <br>
+in a ground position and could be filled with 0 also.<br>
+
+```Python
+# fill nan sig str % with 0
+fighter_stats_df['Sig. str. % F_1'] = fighter_stats_df['Sig. str. % F_1'].fillna(0)
+fighter_stats_df['Sig. str. % F_2'] = fighter_stats_df['Sig. str. % F_2'].fillna(0)
+
+# fill nan in TD% with 0
+fighter_stats_df['Td % F_1'] = fighter_stats_df['Td % F_1'].fillna(0)
+fighter_stats_df['Td % F_2'] = fighter_stats_df['Td % F_2'].fillna(0)
+
+# fill NaN in Ctrl with 0
+fighter_stats_df['Ctrl F_1'] = fighter_stats_df['Ctrl F_1'].fillna(0)
+fighter_stats_df['Ctrl F_2'] = fighter_stats_df['Ctrl F_2'].fillna(0)
+
+```
+
 #### Data Type Conversions
+The relevant columns are converted to the correct data type.<br>
+
+##### Integers
+
+```Pyhton
+main_df[['Height F_1', 'Height F_2',
+         'Weight F_1', 'Weight F_2', 
+         'Reach F_1', 'Reach F_2']] = main_df[['Height F_1', 'Height F_2', 
+                                               'Weight F_1', 'Weight F_2', 
+                                               'Reach F_1', 'Reach F_2']].astype('int64')
+                                              
+```
+
+##### Categories
+
+```Python
+# convert data type
+main_df[['Weight class',
+        'Win decided by',
+        'Win Method',
+        'Stance F_1',
+        'Stance F_2']] = main_df[['Weight class',
+                                'Win decided by',
+                                'Win Method',
+                                 'Stance F_1',
+                                 'Stance F_2']].astype('category')
+```
+
+##### Dates
+
+```Python
+# convert date types
+main_df['DOB F_1'] = pd.to_datetime(main_df['DOB F_1'], format = '%Y-%m-%d')
+main_df['DOB F_2'] = pd.to_datetime(main_df['DOB F_2'], format = '%Y-%m-%d')
+main_df['Date'] = pd.to_datetime(main_df['Date'], format = '%Y-%m-%d')
+```
 
 ### Clean Data set
+The result of the initial cleaning was a completed dataset of 6158 fights in the Ultimate Fighting Championship.<br>
+The data set started with 6350 Fights. <br>
+Rows removed where:
+- Openweight class fights: 117
+- Super Heavyweight fights: 1
+- Overturned fights: 48
+- Could not Continue fights: 19
+- Other (dicision type) : 1
+- Fights with no details at all: 6
+
+A total of 192 fights removed from the initial 6350 in the uncleaned dataset.<br>
+Remaing null values where imputed and datatypes adjusted to give the following outout (main_data.csv)
+
+<img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/main_data_info_1.PNG" width=50% />
+<img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/main_data_info_2.PNG" width=50% /> 
+
 
 # Knowledge Discovery
 
