@@ -403,8 +403,50 @@ Leaving the overall win method with this distribution of methods<br>
 <img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/graphs/Win%20Methods%20Adjusted%20Final.jpg" width=75% height=75%>
 
 #### Fighter Weight
+Weight classes where a fighters general weight was not recorded are selected, and the general distribution of weights<br>
+in that weight classes are displayed below <br>
+
+<img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/graphs/weight_class_nan_dist.jpg" width=75% height=75%>
+
+From the distributions above we can see that for each weight class there is an overwhelming majority <br>
+at the limit range for each weight class which is eaxpected. <br>
+<br>
+Because analysis is of the fights themselves, general weight when not fighting can be filled in for the figther<br>
+by checking the mean and mode for each of the weightclasses missing a fighters weight. <br>
+<br>
+For Lightweight fighters we can see that the mean and mode are almost the same and sit at<br>
+the weight bracket limit which is 155lbs.<br>
+<br>
+For the Middleweight fighters we can see similarly that the mean and mode are almost the same<br>
+at the weight bracket limit of 185lbs.<br>
+<br>
+For the Heavyweight fighters there is more of a range with the mean sitting at approx 225lbs<br>
+and the mode sitting at the weight bracket lower limit of 205 lbs.<br>
+<br>
+For the missing values:
+1. Lightweight - using the mode
+2. Middleweight - using the mode
+3. Heavyweight - As only missing one value, using one random value between the mean and the mode
 
 #### Fighter Height & Reach
+Comparitive studies have shown there is a correlation between height and wingspan (Reach)<br>
+One such study from came to the conclusion that: "Correlation coefficients (r = 0.73-0.89) indicated a clear<br>
+association between arm-span measurements and height in all groups. However, arm-span was found to be<br>
+significantly different (P < 0.01) from height in two ethnic groups, the Afro-Caribbean's of both sexes<br>
+and Asian males. This suggests that arm-span measurements may be an inappropriate proxy<br>
+for height in certain populations." (SL Reeves European Journal Clinical Nutrition Jun 1996)<br>
+<br>
+To fill in missing values 3 possible methods where tested and checked:
+1. Measure for correlation with the UFC fighters in each weight class and see if we can use any descernable
+pattern to fill in the missing values
+2. Random Forest can also be applied to attempt to predict missing values
+3. mean reach and mean height can be used.
+<br>
+When correltation was checked between hegith and reach. The correlation coefficient in the reach versus height for the <br>
+fighters matches the upper bound of the the study mentioned above at 0.89. <br>
+<br>
+
+<img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/graphs/weight_class_height_versus_reach.jpg" width=75% height=75%>
 
 #### Fighter Stance
 
