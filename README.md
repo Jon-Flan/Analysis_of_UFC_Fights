@@ -527,7 +527,8 @@ The relevant columns are converted to the correct data type.<br>
 
 ##### Integers
 
-```Pyhton
+```Python
+# convert data type
 main_df[['Height F_1', 'Height F_2',
          'Weight F_1', 'Weight F_2', 
          'Reach F_1', 'Reach F_2']] = main_df[['Height F_1', 'Height F_2', 
