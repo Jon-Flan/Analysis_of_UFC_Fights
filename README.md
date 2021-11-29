@@ -656,5 +656,9 @@ Jupyter Notebook from within the Anaconda3 framework <br>
       <td>Sklearn</td>
       <td>Random Forest Classification</td>
   </tr>
+  <tr>
+      <td>Scipy</td>
+      <td>Chi squared tests</td>
+  </tr>
 </table> 
 
