@@ -1,8 +1,8 @@
 # An Analysis of UFC Fights
-An analysis of Mixed Martial Arts fights taken place under the promotion of the Ultimate Fighting Championship (UFC).
+Data collection for An analysis of Mixed Martial Arts fights taken place under <br>
+the promotion of the Ultimate Fighting Championship (UFC).
 <br><br>
 <img src="https://piglordmma.com/wp-content/uploads/2020/04/ufc-octagon.jpg">
-# Abstract
 
 # Data Collection
 Data for this analysis has been collected through http://www.ufcstats.com <br>
@@ -577,17 +577,6 @@ Remaing null values where imputed and datatypes adjusted to give the following o
 
 <img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/main_data_info_1.PNG" width=50% />
 <img src="https://github.com/Jon-Flan/Analysis_of_UFC_Fights/blob/main/imgs/main_data_info_2.PNG" width=50% /> 
-
-
-# Knowledge Discovery
-
-## Secondary Exploration
-
-## Feature Creation
-
-## Tertiary Exploration
-
-# Insights
 
 # Further Information
 
